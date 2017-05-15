@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Inknut+Antiqua');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+
+body{
+    background-color: #F5F5F5;
+}
+
+nav ,nav-wrapper {
+    height: 75px !important;
+}
+
+nav a {
+    margin-top: 6px;
+}
+
+nav li a:hover {
+    background-color:  white;
+    color:#039BE5;
+    transition-duration: 0.7s;
+}
+
+
+.titleStyle {
+    font-family: 'Bree Serif', serif;
+    font-size: 40px !important;
+}
+
+h1{
+    font-family: 'Inknut Antiqua', serif !important;
+    font-size: 79px;
+    text-align: center;
+}
+
+h2{
+    font-family: 'Inknut Antiqua', serif !important;
+    font-size: 78px;
+    font-weight: 900;
+}
+
+.centerHome{
+    padding-top: 20%;
+}

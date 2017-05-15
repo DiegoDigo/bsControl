@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>BsControl - {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+    </head>
+    <body>
+        <nav>
+           <div class="nav-wrapper blue">
+             <div class="container">
+              <a href="/" class="brand-logo titleStyle">BsControl</a>
+                {% if user.is_authenticated%}
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">{% if  user.get_full_name == None  %}{{ user.get_username }}{% else %}{{ user.get_full_name }}{% endif %}</a>
+                  <li><a  href='#' data-activates='dropdown1'>{% if  user.get_full_name == None  %}{{ user.get_username }}{% else %}{{ user.get_full_name }}{% endif %}</a></li>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+  </ul>
+              </ul>
+                {% endif %}
+            </div>
+           </div>
+           </div>
+        </nav>
+        <div class="container">
+            {% block content  %}
+            {%  endblock %}
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    </body>
+</html>
