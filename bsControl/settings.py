@@ -41,6 +41,7 @@ NATIVOS_APPS = [
 
 MEU_APPS = [
     'core',
+    'dashbord',
 ]
 
 TERCEIROS_APPS = [

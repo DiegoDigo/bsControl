@@ -12,21 +12,10 @@
         <nav>
            <div class="nav-wrapper blue">
              <div class="container">
-              <a href="/" class="brand-logo titleStyle">BsControl</a>
+              <a href={% url "home" %} class="brand-logo titleStyle">BsControl</a>
                 {% if user.is_authenticated%}
               <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">{% if  user.get_full_name == None  %}{{ user.get_username }}{% else %}{{ user.get_full_name }}{% endif %}</a>
-                  <li><a  href='#' data-activates='dropdown1'>{% if  user.get_full_name == None  %}{{ user.get_username }}{% else %}{{ user.get_full_name }}{% endif %}</a></li>
-
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
+                <li><a href="{% url 'dashbord' %}">{% if  user.get_full_name == None  %}{{ user.get_username }}{% else %}{{ user.get_full_name }}{% endif %}<i class="material-icons left">account_box</i></a>
               </ul>
                 {% endif %}
             </div>
